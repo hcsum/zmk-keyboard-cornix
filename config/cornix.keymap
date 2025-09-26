@@ -249,8 +249,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        win_layer {
-            display-name = "Windows";
+        lower_layer {
+            display-name = "lower";
 
             // ------------------------------------------------------------------------------------------------------------
             // |   `   |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |       |
@@ -260,17 +260,17 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&trans    &trans         &trans        &trans         &trans               &trans                  &trans  &trans               &trans         &trans        &trans            &trans
-&trans    &hm_l LCTRL A  &hm_l LALT S  &hm_l LCTRL D  &hm_shift_l LSHFT F  &trans                  &trans  &hm_shift_r RSHFT J  &hm_r RCTRL K  &hm_r RALT L  &hm_r RCTRL SEMI  &trans
-&kp LGUI  &trans         &trans        &trans         &trans               &trans  &trans  &trans  &trans  &trans               &trans         &trans        &trans            &trans
+&kp GRAVE  &kp N1  &kp N2  &kp N3  &kp LEFT_BRACKET      &kp RIGHT_BRACKET        &kp N0    &trans    &trans      &trans     &trans  &kp BACKSLASH
+&trans     &kp N4  &kp N5  &kp N6  &kp MINUS             &kp EQUAL                &trans    &trans    &kp LEFT  &kp DOWN  &kp UP      &kp RIGHT  &trans  &trans
+&trans     &kp N7  &kp N8  &kp N9  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS    &kp LBRC  &kp RBRC  &kp DELETE  &trans     &trans  &trans
 &none     &none          &none         &trans         &trans               &trans                  &trans  &trans               &trans         &none         &none             &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        Symbol_layer {
-            display-name = "Symbols";
+        raise_layer {
+            display-name = "raise";
 
             // TODO: Some binds are waiting for shifted keycode support.
             // -------------------------------
@@ -286,12 +286,19 @@
 &none  &none     &kp RBKT  &kp RPAR  &kp PIPE  &kp BSLH   &trans  &trans  &kp FSLH   &kp QUESTION  &kp GRAVE  &kp TILDE  &kp SQT   &none
 &none  &none     &none     &none     &trans    &trans                     &kp TILDE  &trans        &kp GRAVE  &none      &none     &none
             >;
+            
+            bindings = <
+&trans  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5     &kp C_VOLUME_UP    &kp C_BRIGHTNESS_INC  &trans  &trans  &trans      &bt BT_SEL 0
+&trans  &kp F6  &kp F7  &kp F8  &kp F9   &kp F10    &kp C_VOLUME_DOWN  &kp C_BRIGHTNESS_DEC  &trans  &trans  &trans      &bt BT_SEL 1
+&trans  &trans  &trans  &trans  &kp F11  &kp F12    &trans   &trans    &kp K_MUTE         &trans                &trans  &trans  &bt BT_CLR  &bt BT_SEL 2
+&none  &none    &none   &trans  &trans   &trans     &trans             &trans                &trans  &none   &none       &none
+            >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        Mix_layer {
-            display-name = "Mix";
+        mix_layer {
+            display-name = "mix";
 
             // ------------------------------------------------------------------------------------------------------------
             // | BTCLR | BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
