@@ -133,6 +133,16 @@
             tapping-term-ms = <HM_TAPPING_TERM>;
             quick-tap-ms = <200>;
         };
+        
+        cmd_esc: cmd_esc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CMD_ESC";
+            bindings = <&kp ESCAPE>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI)>;
+        };
     };
 
     conditional_layers {
