@@ -134,6 +134,46 @@
             quick-tap-ms = <200>;
         };
         
+                alt_left: alt_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_LEFT";
+            bindings = <&kp H>, <&kp LEFT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_RALT)>;
+        };
+
+        alt_right: alt_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_RIGHT";
+            bindings = <&kp L>, <&kp RIGHT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_RALT)>;
+        };
+
+        alt_down: alt_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_DOWN";
+            bindings = <&kp J>, <&kp DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_RALT)>;
+        };
+
+        alt_up: alt_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "ALT_UP";
+            bindings = <&kp K>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_RALT)>;
+        };
+        
         cmd_esc: cmd_esc {
             compatible = "zmk,behavior-mod-morph";
             label = "CMD_ESC";
